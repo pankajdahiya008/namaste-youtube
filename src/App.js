@@ -8,6 +8,8 @@ import Head from "./components/Head";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
 import store from "./utils/store";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const appRouter = createBrowserRouter([
   {
@@ -38,6 +40,8 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <Provider store={store}>
+      <Analytics/>
+      <SpeedInsights />
       <div>
         <Head />
         <RouterProvider router={appRouter} />
